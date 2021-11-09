@@ -16,7 +16,7 @@ export default function TodoItem({ todo }) {
 
   const handleEndEdit= (event) => {
     event.keyCode === 13 &&
-    dispatch(todoActions.addTodoInput(event.currentTarget.value));
+    dispatch(todoActions.endEditTodoInput(event.currentTarget.value));
 
   };
   return (

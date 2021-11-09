@@ -63,6 +63,13 @@ function todoReduce(state, action) {
         return {...state,editIndex:action.payload}
     case END_EDIT_TODO_INPUT:
         {
+            if(state.editIndex !== null){
+                let indexTodo = state.todos.findIndex(todo => todo.id === state.editIndex)
+                console.log(indexTodo,state.valueEdit);
+                state.todos[indexTodo].title= state.valueEdit
+               
+                
+            }
             state.editIndex = null
             return {...state}
         }
